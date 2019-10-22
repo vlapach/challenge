@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule, Routes} from '@angular/router';
 import {MovieMainComponent} from './movie/movie-main/movie-main.component';
+import {MaterialModule} from './material.module';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
     MovieMainComponent
   ],
   imports: [
+    MaterialModule,
     BrowserAnimationsModule,
     BrowserModule,
      RouterModule.forRoot(routes)],
