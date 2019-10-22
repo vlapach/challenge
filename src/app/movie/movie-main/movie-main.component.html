@@ -1,1 +1,38 @@
-test
+<div class="search-bar">
+  <div class="container">
+    <form>
+      <i class="material-icons search-icon">search</i>
+      <input type="text" placeholder="Search..." class="search-input" [formControl]="movieInput">
+    </form>
+  </div>
+</div>
+<div class="content-wrap">
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="row-content">
+            <div class="col" *ngFor="let movie of movieList">
+              <mat-card class="video-item" >
+                <div class="img-wrap">
+                  <img [src]="returnPoster(movie)">
+                </div>
+                <div class="description">
+                  <h4
+                    [innerHTML]="movie.Title | appSlice:40"
+                    [title]="movie.Title"
+                    (click)="getDetailedMovie(movie)"
+                  ></h4>
+                  <span>{{movie.Year}}</span>
+                </div>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+        <div  class="col">
+          <app-movie-detailed *ngIf="movieDetailed" [movie]="movieDetailed"></app-movie-detailed>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

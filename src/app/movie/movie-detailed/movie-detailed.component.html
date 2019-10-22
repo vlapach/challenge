@@ -1,0 +1,38 @@
+<div class="right-content-wrap">
+  <div class="full-content-cols">
+    <div *ngIf="checkByEmpty(movie?.Poster)" class="full-left-content">
+      <img [src]="movie?.Poster">
+    </div>
+    <div class="full-right-content">
+      <h2 class="title">{{movie?.Title}}</h2>
+      <div class="video-data">
+        <div *ngIf="checkByEmpty(movie?.Released)" class="data-row">
+          <span>Release date:</span>
+          <span>{{movie?.Released}}</span>
+        </div>
+        <div *ngIf="checkByEmpty(movie?.Director)"  class="data-row">
+          <span>Director:</span>
+          <span>{{movie?.Director}}</span>
+        </div>
+        <div *ngIf="checkByEmpty(movie?.Actors)"  class="data-row">
+          <span>Actors:</span>
+          <span>{{movie?.Actors}}</span>
+        </div>
+        <div *ngIf="checkByEmpty(movie?.Metascore)"  class="data-row">
+          <span>Metascore:</span>
+          <span>{{movie?.Metascore}}</span>
+        </div>
+        <div *ngIf="checkByEmpty(movie?.imdbRating)"  class="data-row">
+          <span>imdbRating:</span>
+          <span>{{movie?.imdbRating}}</span>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <hr class="description-line"/>
+  <p *ngIf="checkByEmpty(movie?.Plot)"  class="description">
+    {{movie?.Plot}}
+  </p>
+</div>

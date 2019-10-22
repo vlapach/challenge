@@ -4,7 +4,11 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule, Routes} from '@angular/router';
 import {MovieMainComponent} from './movie/movie-main/movie-main.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {SliceStringPipe} from './slice.pipe';
 import {MaterialModule} from './material.module';
+import {MovieDetailedComponent} from './movie/movie-detailed/movie-detailed.component';
 
 
 const routes: Routes = [
@@ -17,10 +21,15 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    SliceStringPipe,
     AppComponent,
-    MovieMainComponent
+    MovieMainComponent,
+    MovieDetailedComponent
   ],
   imports: [
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     MaterialModule,
     BrowserAnimationsModule,
     BrowserModule,
